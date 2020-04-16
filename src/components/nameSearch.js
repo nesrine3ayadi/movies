@@ -2,9 +2,9 @@ import React from 'react'
 
 const nameSearch = ({search}) =>{
     return (
-        <div>
+        <div className="col-md-8">
             <h1> MOVIES APP</h1>
-            <input type="text" placeholder="search" onChange={(e)=>search(e.target.value)} className="col-md-12" />
+            <input className="searchbox " type="text" placeholder="search" onChange={(e)=>search(e.target.value)}  />
         </div>
     )
 }

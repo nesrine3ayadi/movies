@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Modal from 'react-modal'
+import {  Button, Row, Col, Form } from "react-bootstrap";
 
 
 export default class AddModal extends Component {
@@ -35,9 +36,9 @@ export default class AddModal extends Component {
         }
     render() {
         return (
-    <div className=''>
+    <div className='addSection'>
         <button className='btn-modal' onClick={this.openModal}>
-          <img className="img-plus" src="https://www.freepnglogos.com/uploads/plus-icon/plus-svg-png-icon-download-onlinewebfontsm-4.png"/>
+          +
         </button>
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -45,40 +46,20 @@ export default class AddModal extends Component {
           className='modall'
           contentLabel='Example Modal'
         >
+          <h5> ADD A NEW MOVIE</h5>
+           <Form.Control type="text" required placeholder="Movie Name"  name='name' value={this.state.name}
+                onChange={this.handleChange}/>
+           <Form.Control type="text" required placeholder="Image url.."  name='url' value={this.state.url}
+                onChange={this.handleChange}/>
+             <Form.Control type="text" required placeholder="stars rating.."  name='star'  value={this.state.star}
+                onChange={this.handleChange}/>
+         
+
           
-            <label for='fname'>Film Name</label>
-            <input
-              type='text'
-              id='fname'
-              name='name'
-              placeholder='Film name..'
-                value={this.state.name}
-                onChange={this.handleChange}
-            />
 
-            <label for='lname'>Image Url</label>
-            <input
-              type='text'
-              id='lname'
-              name='url'
-              placeholder='Image url..'
-              value={this.state.url}
-              onChange={this.handleChange}
-            />
-
-            <label for='lname'>FIlm rating</label>
-            <input
-              type='text'
-              id='lname'
-              name='star'
-              placeholder='Film rating..'
-              value={this.state.star}
-              onChange={this.handleChange}
-            />
-
-            <button className='input-sub'  value='Add film' onClick={(e)=>this.add(e)}>
+         <Button variant="primary"  className='input-sub'  value='Add film' onClick={(e)=>this.add(e)}>
                 Add
-                </button>
+                </Button>
         </Modal>
       </div>
     );

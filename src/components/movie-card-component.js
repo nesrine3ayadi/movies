@@ -8,7 +8,7 @@ const movieCardComponent = ({ movie}) => {
                 <Rating count={movie.star}/>
                 <img className="card-img-top" src={movie.img} alt="Card image cap" />
                 <div className="card-body">
-                    <h5 className="card-title">{movie.name}</h5>
+                    <h3 className="card-title">{movie.name}</h3>
                     <p className="card-text">{movie.duration}</p>
                     
                 </div>
